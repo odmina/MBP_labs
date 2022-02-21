@@ -5,3 +5,9 @@ lab01_komisja
 lab01_consent
 lab01_sensitive
 lab02
+lab02-papers
+lab02-papers1
+lab02-papers2
+lab02-papers3
+lab02-papers4
+lab02-zotero
