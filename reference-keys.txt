@@ -11,3 +11,8 @@ lab02-papers2
 lab02-papers3
 lab02-papers4
 lab02-zotero
+lab03
+lab03-pytanie
+lab03-hipoteza
+lab05
+lab05-miejsca
