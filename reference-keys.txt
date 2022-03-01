@@ -14,5 +14,7 @@ lab02-zotero
 lab03
 lab03-pytanie
 lab03-hipoteza
+lab03-roznica
+lab04
 lab05
 lab05-miejsca
