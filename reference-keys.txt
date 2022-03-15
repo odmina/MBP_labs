@@ -16,5 +16,17 @@ lab03-pytanie
 lab03-hipoteza
 lab03-roznica
 lab04
+lab-04-rodzaje
+szczególne-zagadnienia-dotyczące-pytań-z-kafeterią
 lab05
 lab05-miejsca
+lab-05-czy-moge
+dlaczego-o-tym-mówimy---podstawowe-kwestie-prawne
+tak-zwane-pola-eksploatacji
+licencje
+wersja-drukowana-a-wersja-internetowa
+praktyczne-zasady-dla-korzystających-z-kwestionariuszy
+rzetelność-i-trafność-pomiaru-lab-05-rz-t
+rzetelność
+trafność
+lab-06
