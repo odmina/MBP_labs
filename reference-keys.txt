@@ -1,3 +1,4 @@
+fig:vas
 lab01
 lab01_etyka
 lab01_ryzyko
@@ -26,7 +27,8 @@ tak-zwane-pola-eksploatacji
 licencje
 wersja-drukowana-a-wersja-internetowa
 praktyczne-zasady-dla-korzystających-z-kwestionariuszy
-rzetelność-i-trafność-pomiaru-lab-05-rz-t
+lab-05-rz-t
 rzetelność
 trafność
 lab-06
+refs
