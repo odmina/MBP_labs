@@ -30,5 +30,8 @@ praktyczne-zasady-dla-korzystających-z-kwestionariuszy
 lab-05-rz-t
 rzetelność
 trafność
-lab-06
+lab06
+lab06-consent
+lab06-personal-data
+lab07
 refs
