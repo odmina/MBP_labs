@@ -34,4 +34,14 @@ lab06
 lab06-consent
 lab06-personal-data
 lab07
+lab07-most-important
+lab07-2-internet
+lab07-2-multiple
+lab07-2-out-of-group
+lab07-2-out-of-scale
+lab07-2-order-effect
+lab07-3-all-methods
+lab07-3-random-answers
+lab07-3-post-collection
+lab08
 refs
