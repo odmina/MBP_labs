@@ -24,7 +24,7 @@
 <meta name="author" content="Małgorzata Basińska" />
 
 
-<meta name="date" content="2022-03-29" />
+<meta name="date" content="2022-04-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="lab07-3-all-methods.html"/>
-<link rel="next" href="refs.html"/>
+<link rel="next" href="lab08-dataset.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -173,7 +173,12 @@ div.csl-indent {
 <li class="chapter" data-level="7.3.2" data-path="lab07-3-all-methods.html"><a href="lab07-3-all-methods.html#lab07-3-post-collection"><i class="fa fa-check"></i><b>7.3.2</b> Weryfikacja danych po zakończeniu badania</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="lab08.html"><a href="lab08.html"><i class="fa fa-check"></i><b>8</b> Przygotowanie danych do analizy</a></li>
+<li class="chapter" data-level="8" data-path="lab08.html"><a href="lab08.html"><i class="fa fa-check"></i><b>8</b> Przygotowanie danych do analizy</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="lab08-dataset.html"><a href="lab08-dataset.html"><i class="fa fa-check"></i><b>8.1</b> Jak powinien wyglądać przygotowany do analizy zbiór</a></li>
+<li class="chapter" data-level="8.2" data-path="lab08-datatypes.html"><a href="lab08-datatypes.html"><i class="fa fa-check"></i><b>8.2</b> Typy danych</a></li>
+<li class="chapter" data-level="8.3" data-path="lab08-out-of-scale.html"><a href="lab08-out-of-scale.html"><i class="fa fa-check"></i><b>8.3</b> Wartości spoza skali i braki danych</a></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="refs.html"><a href="refs.html"><i class="fa fa-check"></i><b>9</b> Bibliografia</a></li>
 </ul>
 
@@ -197,16 +202,25 @@ div.csl-indent {
 <div class="box">
 <p><strong>WASZE ZADANIE</strong></p>
 <p>UWAGA: na zajęcia przynajmniej jedna osoba z grupy musi mieć ze sobą urządzenie z działającym RStudio (komputer z zainstalowaną wersją desktopową albo jakąś formę dostępu do interentu, gdy korzystacie z wersji chmurowej).</p>
-<p>Na zajeciach zaczniecie tworzyć w RStudio notatnik, w którym będziecie przygotowywać dane do analizy. Dlatego każda grupa powinna mieć na zajęcia plik csv taki, jaki ściągnie po zakończeniu badani, oczywiście bez kompletu danych. Wystarczy, że będziecie mieć 2-3 ankiety, format Waszej bazy pozostanie taki sam, a kod będzie działał gdy zakończycie badanie (co z resztą jest olbrzymią przewagą kodowania nad systemem okienkowym).</p>
+<p>Na zajęciach zaczniecie tworzyć w RStudio notatnik, w którym będziecie przygotowywać dane do analizy. Dlatego każda grupa powinna mieć na zajęcia plik csv taki, jaki ściągnie po zakończeniu badani, oczywiście bez kompletu danych. Wystarczy, że będziecie mieć 2-3 ankiety, format Waszej bazy pozostanie taki sam, a kod będzie działał gdy zakończycie badanie (co z resztą jest olbrzymią przewagą kodowania nad systemem okienkowym).</p>
 </div>
-
-
-
-
-
-
-
-
+<div class="box">
+<p><strong>LITERATURA</strong></p>
+<p>Ten rozdział zawiera najbardziej podstawowe informacje o przygotowaniu danych do analizy. Jeżeli chcecie dokładnie poznać “data wrangling” w R, polecam książkę <em>R for Data Science</em> autorstwa H. Wickhama i G. Grolemunda dostępną na licencji Creative Commons Attribution-NonCommercial-NoDerivs 3.0 <a href="https://r4ds.had.co.nz/index.html">tutaj</a>.</p>
+<p>Zajęcia dotyczące przygotowania danych do analizy przygotowywane są w oparciu o rozdziały 9-16.</p>
+</div>
+<p>Na tych zajęciach zapoznacie się z najważniejszymi kwestiami, na które MUSICIE zwrócić uwagę przed rozpoczęciem analizy danych. Stwórzcie folder, w którym będziecie przechowywać materiały związane z projektem i umieśćcie w nim plik .csv, na którym będziecie pracować oraz plik .Rmd z notatnikiem, który posłuży Wam do do przygotowania danych do analizy.</p>
+<p>Gdyby ktoś miał problem z podstawami R, polecam gorąco:</p>
+<ul>
+<li>przypomnieć sobie, co robiliśmy na zajęciach w poprzednim semestrze i w razie potrzeby jeszcze raz przećwiczyć;</li>
+<li>skorzystać z rozdziałów 1-8 <a href="https://r4ds.had.co.nz/index.html"><em>R for Data Science</em></a>.</li>
+</ul>
+<p>Jeżeli ktoś ma poczucie, że sam tego nie ogarnie, zapraszam na konsultacje. Przypominam, że w tym semestrze oprócz artykułu oddajecie mi wszystkie dodatkowe pliki stworzone w Waszym projekcie, wraz z notatnikiem .Rmd. Kod, który będzie dla mnie zaskakujący, będzie znacząco różnił się od tego, co robiliśmy na zajęciach, będzie wymagał od Was wyjaśnienia (będę pytać, co robią poszczególne linijki).</p>
+<div class="box">
+<p><strong>TŁUMACZENIE</strong></p>
+<p>Jeżeli ktoś ma problemy z korzystaniem z materiałów dotyczących R po angielsku, nie ma problemu, książka, z której korzystamy została wydana po polsku: Wickham, H., Grolemund, G., Zatorska, J., &amp; Grupa Wydawnicza Helion. (2020). Jezyk R: Kompletny zestaw narzedzi dla analityków danych. Wydawnictwo Helion.</p>
+<p>Jeszcze prostszą (i darmową!) metodą jest skorzystanie z opcji automatycznego tłumaczenia w przeglądarkach Chrome i Firefox. Co prawda przekład czasem jest zadziwiający, ale być może będzie dla Was pomocą.</p>
+</div>
 </div>
             </section>
 
@@ -214,7 +228,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="lab07-3-all-methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="refs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lab08-dataset.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

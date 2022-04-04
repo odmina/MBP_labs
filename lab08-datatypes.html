@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.5 Dane wrażliwe i ich ochrona | Twój pierwszy projekt badawczy</title>
-  <meta name="description" content="1.5 Dane wrażliwe i ich ochrona | Twój pierwszy projekt badawczy" />
+  <title>8.2 Typy danych | Twój pierwszy projekt badawczy</title>
+  <meta name="description" content="8.2 Typy danych | Twój pierwszy projekt badawczy" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.5 Dane wrażliwe i ich ochrona | Twój pierwszy projekt badawczy" />
+  <meta property="og:title" content="8.2 Typy danych | Twój pierwszy projekt badawczy" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.5 Dane wrażliwe i ich ochrona | Twój pierwszy projekt badawczy" />
+  <meta name="twitter:title" content="8.2 Typy danych | Twój pierwszy projekt badawczy" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lab01_consent.html"/>
-<link rel="next" href="lab02.html"/>
+<link rel="prev" href="lab08-dataset.html"/>
+<link rel="next" href="lab08-out-of-scale.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -197,28 +197,41 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab01_sensitive" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> Dane wrażliwe i ich ochrona</h2>
-<p>Na zajęciach nie możemy pozwolić sobie na zbieranie jakichkolwiek danych wrażliwych, gdyż podlegają one specjalnej ochronie, której podczas realizacji Waszych projektów po prostu nie jesteśmy w stanie zapewnić. Ponadto potrzebowalibyśmy zgody komisji bioetycznej na przeprowadzenie takich badań.</p>
-<p>Danymi wrażliwymi są:</p>
+<div id="lab08-datatypes" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Typy danych</h2>
+<p>Typy danych w Waszym zbiorze możecie poznać korzystając funkcji <code>glimpse()</code> (w nawiasie musicie podać nazwę Waszego zbioru). Możecie spotkać się z następującymi typami danych:</p>
 <ul>
-<li>dane osobowe,</li>
-<li>dane dotyczące stanu zdrowia,</li>
-<li>dane dotyczące seksualności,</li>
-<li>dane dotyczące pochodzenia etnicznego,</li>
-<li>dane dotyczące światopoglądu i religii,</li>
-<li>jakiekolwiek dane, których ujawnienie mogłoby zaszkodzić osobom badanym.</li>
+<li><chr> - dane tekstowe</li>
+<li><int> - liczba całkowita</li>
+<li><dbl> - liczba rzeczywista</li>
+<li><dt>
+<ul>
+<li>data</li>
+</ul></li>
+<li><dttm> - data i czas</li>
+<li><lgl> - zmienna logiczna (może zawierać wartości <code>TRUE</code> i <code>FALSE</code>)</li>
+<li><fct> - faktor</li>
+<li>…i inne :)</li>
 </ul>
-
+<p>Jak zmienić typ danych? Korzystacie z następujących funkcji:</p>
+<ul>
+<li><code>as.integer()</code>, która zmienia typ danych na liczbę całkowitą;</li>
+<li><code>as.character()</code>, która zmienia typ danych na tekstowy;</li>
+<li><code>as.numeric()</code>, która zmienia typ danych na liczbę rzeczywistą.</li>
+</ul>
+<p>Uwaga: jeżeli jakiejś wartości nie da się przekształcić na docelowy typ (np. tekstu “dwa” nie da się przekształcić na liczbę 2), uzyskacie brak danych. Dlatego zalecam ostrożność.</p>
+<p>Wyobraźmy sobie, że mamy w naszym zbiorze o nazwie <code>moje_dane</code> zmienną <code>dzieci</code> o typie tekstowym i chcemy uzyskać zmienną <code>liczba_dzieci</code> o typie rzeczywistym. Skorzystamy z funkcji <code>mutate()</code>.</p>
+<pre><code>moje_dane &lt;- moje_dane %&gt;%
+  mutate(liczba_dzieci = as.numeric(dzieci))</code></pre>
+<p>Jeżeli nasza zmienna <code>dzieci</code> zawierała wartości <code>"syn"   "2"     "1"     "1"     "troje"</code>, to zmienna <code>liczba_dzieci</code> będzie zawierała wartości <code>NA  2  1  1 NA</code> (NA to brak danych).</p>
 </div>
-<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="lab01_consent.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab02.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lab08-dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab08-out-of-scale.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

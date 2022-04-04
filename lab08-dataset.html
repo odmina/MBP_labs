@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.5 Dane wrażliwe i ich ochrona | Twój pierwszy projekt badawczy</title>
-  <meta name="description" content="1.5 Dane wrażliwe i ich ochrona | Twój pierwszy projekt badawczy" />
+  <title>8.1 Jak powinien wyglądać przygotowany do analizy zbiór | Twój pierwszy projekt badawczy</title>
+  <meta name="description" content="8.1 Jak powinien wyglądać przygotowany do analizy zbiór | Twój pierwszy projekt badawczy" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.5 Dane wrażliwe i ich ochrona | Twój pierwszy projekt badawczy" />
+  <meta property="og:title" content="8.1 Jak powinien wyglądać przygotowany do analizy zbiór | Twój pierwszy projekt badawczy" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.5 Dane wrażliwe i ich ochrona | Twój pierwszy projekt badawczy" />
+  <meta name="twitter:title" content="8.1 Jak powinien wyglądać przygotowany do analizy zbiór | Twój pierwszy projekt badawczy" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lab01_consent.html"/>
-<link rel="next" href="lab02.html"/>
+<link rel="prev" href="lab08.html"/>
+<link rel="next" href="lab08-datatypes.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -197,28 +197,26 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab01_sensitive" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> Dane wrażliwe i ich ochrona</h2>
-<p>Na zajęciach nie możemy pozwolić sobie na zbieranie jakichkolwiek danych wrażliwych, gdyż podlegają one specjalnej ochronie, której podczas realizacji Waszych projektów po prostu nie jesteśmy w stanie zapewnić. Ponadto potrzebowalibyśmy zgody komisji bioetycznej na przeprowadzenie takich badań.</p>
-<p>Danymi wrażliwymi są:</p>
-<ul>
-<li>dane osobowe,</li>
-<li>dane dotyczące stanu zdrowia,</li>
-<li>dane dotyczące seksualności,</li>
-<li>dane dotyczące pochodzenia etnicznego,</li>
-<li>dane dotyczące światopoglądu i religii,</li>
-<li>jakiekolwiek dane, których ujawnienie mogłoby zaszkodzić osobom badanym.</li>
-</ul>
-
+<div id="lab08-dataset" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Jak powinien wyglądać przygotowany do analizy zbiór</h2>
+<p>Przygotowany do analizy zbiór powinien mieć wszystkie poniższe właściwości:</p>
+<ol style="list-style-type: decimal">
+<li>Każda obserwacja powinna znajdować się w osobnym wierszu…</li>
+<li>…a każda zmienna powinna znajdować się w osobnej kolumnie. Mam nadzieję, że zaprojektowaliście swoje ankiety, by tak właśnie było, jeżeli tak nie jest - pytajcie jak sobie z tym poradzić.</li>
+<li>Nazwy zmiennych powinny być pozbawione spacji i polskich znaków (osiągamy to korzystając z funkcji <code>rename()</code>, która służy do zmiany nazw zmiennych)</li>
+<li>Zmienne powinny być odpowiedniego typu, tzn. tam, gdzie w analizie chcecie korzystać z danych liczbowych, zmienne powinny być liczbami, a tam, gdzie chcecie korzystać z tekstu, zmienne powinny być zmiennymi tekstowymi. Jak się dowiedzieć, jaki jest typ zmiennej i jak go zmienić? Informacje są w odpowiednim podrozdziale.</li>
+<li>Powinniście wiedzieć, jakie są zakresy wartości w zmiennych liczbowych. Gdyby jakaś wartość była wartością spoza zakresu, musicie: wiedzieć ile jest takich przypadków, podjąć decyzję, co z nimi zrobić i zastosować kod, który pozwoli Wam odfiltrować lub zastąpić nieodpowiednie wartości.</li>
+<li>Powinniście wiedzieć, ile macie braków danych.</li>
+</ol>
+<p>Bardziej szczegółowe informacje dostępne są poniżej i w notatnikach z zajęć.</p>
 </div>
-<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="lab01_consent.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab02.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lab08.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab08-datatypes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
