@@ -45,7 +45,16 @@ lab07-3-random-answers
 lab07-3-post-collection
 lab08
 lab08-dataset
+lab08-import-export
+import
+eksport
+lab08-tidyverse
+filtrowanie
+tworzenie-nowych-zmiennych-i-obliczenia
+wybieranie-kolumn
+rura-pipe
 lab08-datatypes
 lab08-out-of-scale
-lab12
+braki-danych
+podsumowania
 refs

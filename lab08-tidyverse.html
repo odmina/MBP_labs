@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Wprowadzenie | Twój pierwszy projekt badawczy</title>
-  <meta name="description" content="Wprowadzenie | Twój pierwszy projekt badawczy" />
+  <title>8.3 Kilka uwag o tidyverse | Twój pierwszy projekt badawczy</title>
+  <meta name="description" content="8.3 Kilka uwag o tidyverse | Twój pierwszy projekt badawczy" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Wprowadzenie | Twój pierwszy projekt badawczy" />
+  <meta property="og:title" content="8.3 Kilka uwag o tidyverse | Twój pierwszy projekt badawczy" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Wprowadzenie | Twój pierwszy projekt badawczy" />
+  <meta name="twitter:title" content="8.3 Kilka uwag o tidyverse | Twój pierwszy projekt badawczy" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="lab00_cele.html"/>
+<link rel="prev" href="lab08-import-export.html"/>
+<link rel="next" href="lab08-datatypes.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -213,16 +213,74 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab00_wprowadzenie" class="section level1 unnumbered">
-<h1>Wprowadzenie</h1>
+<div id="lab08-tidyverse" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Kilka uwag o tidyverse</h2>
+<p>Przygotowując dane do analizy będziecie korzystać z fukcji wchodzących w skład paczki (biblioteki) <strong>tidyverse</strong>. Kiedy programujemy, przekazujemy funkcjom argumenty. Wiele z funkcji wchodzących w skład <strong>tidyverse</strong> funkcji służy do dokonywania operacji na zmiennych w zbiorze. W tych funkcjach zawsze pierwszym argumentem jest nazwa zbioru. Następnie po przecinkach następują nazwy zmiennych w zbiorze albo polecenia z wykorzystaniem nazw tych zmiennych.</p>
+<p>W skład <strong>tidyverse</strong> wchodzi paczka <a href="https://dplyr.tidyverse.org"><strong>dplyr</strong></a>. Podstawą jej działania jest kilka czasowników, które pozwalają Wam wykonywać operacje na zbiorze.</p>
+<ul>
+<li><code>filter()</code> pozwala odfiltrować dane w zbiorze na podstawie wartości zmiennych;</li>
+<li><code>select()</code> pozwala wybrać ze zbioru zmienne;</li>
+<li><code>mutate()</code> pozwala stworzyć nową zmienną na podstawie już istniejących zmiennych;</li>
+<li><code>summarise()</code> pozwala stworzyć podsumowanie zbioru;</li>
+<li><code>arrange()</code> pozwala sortować zbiór.</li>
+</ul>
+<p>Jeżeli chcesz dobrze nauczyć się korzystać z tych funkcji, gorąco polecam <a href="https://r4ds.had.co.nz/transform.html">rozdział z R for Data Science</a>.</p>
+<p>Poniżej kilka przypadków często spotykanych w pracy z danymi pochodzącymi z kwestionariuszy.</p>
+<div id="filtrowanie" class="section level3" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Filtrowanie</h3>
+<p>Wyobraź sobie, że Twoje badanie na absolutnie fascynujący temat skierowane było tylko do osób powyżej 25 roku życia, ale link do anonimowej ankiety rozpowszechniany był bardzo szeroko, wszelkimi dostępnymi kanałami, a ankietę mógł wypełnić każdy, niezależnie od wieku (kiedy jest to dobry, a kiedy zły pomysł to odrębny temat). Masz teraz w zbiorze osoby, które nie spełniają kryterium udziału w badaniu i chcesz pozbyć się ich ze zbioru. Możesz to zrobić, korzystając z funkcji <code>filter()</code>.</p>
+<p>Załóżmy, że zbiór przechowujesz w zmiennej <code>moje_dane</code>, a informacje o wieku znajdują się w kolumnie <code>wiek</code>. Poniższy kod stworzy zbiór, z którego usunięte zostaną obserwacje dotyczące osób młodszych niż 25 lat i zapisze go w nowej zmiennej <code>moje_dane_25</code>. By obserwacja pozostała w zbiorze muszą zostać spełnione wyszystkie warunki wymienione po przecinku. W tym przypadku zmienna <code>wiek</code> musi mieć wartość większą lub równą 25.</p>
+<pre><code>moje_dane_25 &lt;- filter(moje_dane, wiek &gt;= 25)</code></pre>
+<p>Informacje o tym, jakich operatorów możesz użyć tworząc warunki znajdziesz tu: <a href="https://r4ds.had.co.nz/transform.html">R for Data Science, rodz. 5. Data transformation</a>.</p>
+<p>Kolejne warunki możesz dodać po przecinku. Gdyby w zbiorze miały zostać jedynie dane dotyczące kobiet powyżej 25 roku życia, kod mógłby wyglądać tak:</p>
+<pre><code>moje_dane_25 &lt;- filter(moje_dane, wiek &gt;= 25, plec == &quot;kobieta&quot;)</code></pre>
+</div>
+<div id="tworzenie-nowych-zmiennych-i-obliczenia" class="section level3" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Tworzenie nowych zmiennych i obliczenia</h3>
+<p>Załóżmy, że chcesz odwórcić skalę w kilku pytaniach kwestionariusza. Najprościej to zrobić korzystając z funkcji <code>mutate()</code>. Jej pierwszym argumentem jest nazwa zbioru. Kolejnymi argumentami są obliczenia, które chcesz wykonać. Przed znakiem równości podajesz nazwę nowej zmiennej, a po znaku równości obliczenie, w którym wykorzystujesz zmienne już istniejące w zbiorze:</p>
+<pre><code>moje_dane &lt;- mutate(moje_dane,
+  P2_r = 6 - P2,
+  P4_r = 6 - P4,
+  P6_r = 6 - P6,
+  P8_r = 6 - P8
+  )</code></pre>
+<div class="box">
+<p>Uniwersalny wzór na odwracanie skali wygląda tak:</p>
+<p><em>odwrócony wynik = koniec skali + początek skali - wynik osoby badanej</em></p>
+<p>Zatem dla skali od 1 do 5 mamy:</p>
+<p><em>odwrócony wynik = 5 + 1 - wynik osoby badanej</em></p>
+<p>Prawdopodobnie będziesz odwracać wiele pytań wg tego samego wzoru. By ograniczyć ilosć tekstu, który musisz wpisać, możesz skorzystać z funkcji <code>across()</code>. Więcej informacji na jej temat znajdziesz tu: <a href="https://dplyr.tidyverse.org/reference/across.html">Apply a function (or functions) across multiple columns</a>.</p>
+</div>
+</div>
+<div id="wybieranie-kolumn" class="section level3" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> Wybieranie kolumn</h3>
+<p>Załóżmy, że zmienne w pytaniach, które tego wymagały są już odwrócone i chcesz usunąć oryginalne zmienne i ustawić zmienne w zbiorze tak, by wyniki w kolejnych pytaniach następowały po sobie, czyli P1, P2_r, P3, P4_r itd. Możesz skorzystać z funkcji <code>select()</code>. Jak zwykle, podajesz najpierw nazwę zbioru. Potem po przecinku podajesz nazwy zmiennych, które mają zostać w zbiorze. Jeżeli chcesz usunąć jakąś zmienną, wpisujesz jej nazwę z minusem. By usunąć stare zmienne:</p>
+<pre><code>moje_dane &lt;- select(moje_dane, -P2, -P4, -P6, -P8)</code></pre>
+<div class="box">
+<p>Funkcja <code>select()</code> ma wiele słów pomocniczych, które pozwalają wykonywać najrozmaitsze manipulacje kolumnami. Informacje o nich znajdziesz tu: <a href="https://dplyr.tidyverse.org/reference/select.html">Subset columns using their names and types</a></p>
+</div>
+</div>
+<div id="rura-pipe" class="section level3" number="8.3.4">
+<h3><span class="header-section-number">8.3.4</span> Rura (<em>pipe</em>)</h3>
+<p>Jeżeli chcesz na zbiorze wykonać serię operacji, np. obrócić skalę i usunąć stare zmienne, możesz wykorzystać operator <code>%&gt;%</code> zwany rurą (ang. <em>pipe</em>). “Przepycha” on wynik ostatniej operacji na zbiorze jako pierwszy argument kolejnej funkcji. Operacje obrócenia skali i wyrzucenia starych zmiennych możnaby zatem wykonać tak:</p>
+<pre><code>moje_dane &lt;- moje_dane %&gt;%
+  mutate(
+    P2_r = 6 - P2,
+    P4_r = 6 - P4,
+    P6_r = 6 - P6,
+    P8_r = 6 - P8
+  ) %&gt;%
+  select(-P2, -P4, -P6, -P8)
+</code></pre>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab00_cele.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lab08-import-export.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab08-datatypes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
