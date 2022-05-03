@@ -57,4 +57,7 @@ lab08-datatypes
 lab08-out-of-scale
 braki-danych
 podsumowania
+lab09
+lab09-podstawy
+lab10
 refs
