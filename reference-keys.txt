@@ -60,4 +60,14 @@ podsumowania
 lab09
 lab09-podstawy
 lab10
+lab10-co-ma-byc
+lab10-group-comparison
+lab10-correlation
+lab11
+lab11-struktura
+lab11_format
+lab11-language
+lab11-citations
+lab11-tables-charts
+lab11-stats
 refs
