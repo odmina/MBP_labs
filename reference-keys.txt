@@ -9,4 +9,15 @@ słowem-przypomnienia---dobry-temat-badań
 lab02-pytanie
 lab02-hipoteza
 lab02-roznica
+lab03
+lab03-miejsca
+lab03-czy-moge
+dlaczego-o-tym-mówimy---podstawowe-kwestie-prawne
+tak-zwane-pola-eksploatacji
+licencje
+wersja-drukowana-a-wersja-internetowa
+praktyczne-zasady-dla-korzystających-z-kwestionariuszy
+lab03-rz-t
+rzetelność
+trafność
 refs
