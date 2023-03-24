@@ -20,4 +20,7 @@ praktyczne-zasady-dla-korzystających-z-kwestionariuszy
 lab03-rz-t
 rzetelność
 trafność
+lab05
+lab05-consent
+lab05-personal-data
 refs
