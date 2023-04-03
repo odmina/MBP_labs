@@ -1,3 +1,4 @@
+fig:vas
 lab01
 lab01_etyka
 lab01_ryzyko
@@ -20,6 +21,10 @@ praktyczne-zasady-dla-korzystających-z-kwestionariuszy
 lab03-rz-t
 rzetelność
 trafność
+lab04
+lab-04-rodzaje
+szczególne-zagadnienia-dotyczące-pytań-z-kafeterią
+lab-04-ls
 lab05
 lab05-consent
 lab05-personal-data
