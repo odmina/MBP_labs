@@ -28,4 +28,14 @@ lab-04-ls
 lab05
 lab05-consent
 lab05-personal-data
+lab06
+lab06-most-important
+lab06-2-internet
+lab06-2-multiple
+lab06-2-out-of-group
+lab06-2-out-of-scale
+lab06-2-order-effect
+lab06-3-all-methods
+lab06-3-random-answers
+lab06-3-post-collection
 refs
