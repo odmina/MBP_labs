@@ -38,4 +38,5 @@ lab06-2-order-effect
 lab06-3-all-methods
 lab06-3-random-answers
 lab06-3-post-collection
+lab07
 refs
