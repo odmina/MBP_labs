@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8.5 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy</title>
-  <meta name="description" content="8.5 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy" />
+  <title>8.6 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy</title>
+  <meta name="description" content="8.6 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8.5 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy" />
+  <meta property="og:title" content="8.6 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8.5 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy" />
+  <meta name="twitter:title" content="8.6 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy" />
   
   
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lab08-datatypes.html"/>
+<link rel="prev" href="rekodowanie.html"/>
 <link rel="next" href="refs.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -183,10 +183,11 @@ div.csl-indent {
 <li class="chapter" data-level="8.3.4" data-path="lab08-tidyverse.html"><a href="lab08-tidyverse.html#rura-pipe"><i class="fa fa-check"></i><b>8.3.4</b> Rura (<em>pipe</em>)</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="lab08-datatypes.html"><a href="lab08-datatypes.html"><i class="fa fa-check"></i><b>8.4</b> Typy danych</a></li>
-<li class="chapter" data-level="8.5" data-path="lab08-out-of-scale.html"><a href="lab08-out-of-scale.html"><i class="fa fa-check"></i><b>8.5</b> Wartości spoza skali i braki danych</a>
+<li class="chapter" data-level="8.5" data-path="rekodowanie.html"><a href="rekodowanie.html"><i class="fa fa-check"></i><b>8.5</b> Rekodowanie</a></li>
+<li class="chapter" data-level="8.6" data-path="lab08-out-of-scale.html"><a href="lab08-out-of-scale.html"><i class="fa fa-check"></i><b>8.6</b> Wartości spoza skali i braki danych</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="lab08-out-of-scale.html"><a href="lab08-out-of-scale.html#braki-danych"><i class="fa fa-check"></i><b>8.5.1</b> Braki danych</a></li>
-<li class="chapter" data-level="8.5.2" data-path="lab08-out-of-scale.html"><a href="lab08-out-of-scale.html#podsumowania"><i class="fa fa-check"></i><b>8.5.2</b> Podsumowania</a></li>
+<li class="chapter" data-level="8.6.1" data-path="lab08-out-of-scale.html"><a href="lab08-out-of-scale.html#braki-danych"><i class="fa fa-check"></i><b>8.6.1</b> Braki danych</a></li>
+<li class="chapter" data-level="8.6.2" data-path="lab08-out-of-scale.html"><a href="lab08-out-of-scale.html#podsumowania"><i class="fa fa-check"></i><b>8.6.2</b> Podsumowania</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="refs.html"><a href="refs.html"><i class="fa fa-check"></i><b>9</b> Bibliografia</a></li>
@@ -207,19 +208,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab08-out-of-scale" class="section level2 hasAnchor" number="8.5">
-<h2><span class="header-section-number">8.5</span> Wartości spoza skali i braki danych<a href="lab08-out-of-scale.html#lab08-out-of-scale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lab08-out-of-scale" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Wartości spoza skali i braki danych<a href="lab08-out-of-scale.html#lab08-out-of-scale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Może zdarzyć się, że w Waszym zbiorze pojawią się braki danych lub nieoczekiwane wartości. W ankietach papier-ołówek niewiele możecie z tym zrobić, w ankietach internetowych macie narzędzia by ograniczać występowanie takich sytuacji. Niemniej nawet w przypadku dobrze zaprojektowanej ankiety internetowej zachęcam Was (a w przypadku zadania zaliczeniowego wymagam od Was), byście weryfikowali zakres wprowadzonych wartości. Dlaczego? Np. dlatego, że czasami w pytaniu otwartym trudno ograniczyć zakres wprowadzanych wartości do sensownego przedziału i możecie dostać zaskakujący wynik, który warto znać przed przystąpieniem do analizy.</p>
-<div id="braki-danych" class="section level3 hasAnchor" number="8.5.1">
-<h3><span class="header-section-number">8.5.1</span> Braki danych<a href="lab08-out-of-scale.html#braki-danych" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="braki-danych" class="section level3 hasAnchor" number="8.6.1">
+<h3><span class="header-section-number">8.6.1</span> Braki danych<a href="lab08-out-of-scale.html#braki-danych" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Funkcją służącą do weryfikowania, czy mamy do czynienia z brakiem danych jest funkcja <code>is.na()</code>. Jeżeli chcecie zobaczyć, czy w zmiennej <code>wiek</code> w zbiorze <code>moje_dane</code> macie jakiekolwiek braki, możecie wpisać:</p>
 <pre><code>is.na(moje_dane$wiek)</code></pre>
 <p>Funkcja <code>is.na()</code> zwraca <code>TRUE</code> jeżeli dana wartość jest brakiem danych i <code>FALSE</code> jeżeli nie jest. Robi to dla każdej pojedynczej wartości w wektorze. Jeżeli w zmiennej wiek mieliście wartości: 23, 26, 18, <em>NA</em>, 29, to po zastosowaniu is.na() otrzymacie <code>FALSE</code>, <code>FALSE</code>, <code>FALSE</code>, <code>TRUE</code>, <code>FALSE</code>. Żeby dowiedzieć się, czy macie jakiekolwiek braki, możecie użyć funkcji <code>any.na()</code>. Wtedy dostaniecie <code>TRUE</code>, jeżeli w danej zmiennej był choć jeden brak albo <code>FALSE</code>, jeżeli nie było ani jednego braku.</p>
 <p>Jeżeli chcecie podliczyć, ile było braków możecie skorzystać z fajnej właściwości wartości logicznych. <code>TRUE</code> można traktować jak 1, a <code>FALSE</code> jako 0. Jeżeli wynik zastosowania funkcji <code>is.na()</code> zsumujecie przy użyciu funkcji <code>sum()</code>, otrzymacie liczbę braków.</p>
 <pre><code>sum(is.na(moje_dane$wiek))</code></pre>
 </div>
-<div id="podsumowania" class="section level3 hasAnchor" number="8.5.2">
-<h3><span class="header-section-number">8.5.2</span> Podsumowania<a href="lab08-out-of-scale.html#podsumowania" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="podsumowania" class="section level3 hasAnchor" number="8.6.2">
+<h3><span class="header-section-number">8.6.2</span> Podsumowania<a href="lab08-out-of-scale.html#podsumowania" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Jest wiele sposobów, by przedstawić podsumowania zmiennych, ale zdecydowanie najprostszym jest użycie funkcji <code>summary()</code> (w nawiasie podajecie nazwę zmiennej ze zbiorem). W jej wydruku znajdziecie:</p>
 <ul>
 <li>dla zmiennych tekstowych i faktorów: informacje o częstości występowania każdej z wartości oraz informację o liczbie braków danych;</li>
@@ -235,7 +236,7 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="lab08-datatypes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rekodowanie.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="refs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

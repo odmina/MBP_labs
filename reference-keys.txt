@@ -51,6 +51,7 @@ tworzenie-nowych-zmiennych-i-obliczenia
 wybieranie-kolumn
 rura-pipe
 lab08-datatypes
+rekodowanie
 lab08-out-of-scale
 braki-danych
 podsumowania
