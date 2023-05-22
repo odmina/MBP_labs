@@ -55,4 +55,9 @@ rekodowanie
 lab08-out-of-scale
 braki-danych
 podsumowania
+lab10
+lab10-co-ma-byc
+lab10-group-comparison
+lab10-correlation
+związek-między-zmiennymi-jakościowymi
 refs
