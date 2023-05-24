@@ -236,7 +236,7 @@ div.csl-indent {
     &quot;2&quot; = &quot;Raczej nie&quot;,
     &quot;3&quot; = &quot;Raczej tak&quot;,
     &quot;4&quot; = &quot;Zdecydowanie tak&quot;)) %&gt;%
-  mutate(przyklad = factor(przyklad, levels = c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;)))</code></pre>
+  mutate(przyklad = factor(przyklad, levels = c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;)))</code></pre>
 <p>Inny sposób polega na zastosowaniu innej funkcji, jeżeli macie starszą wersję paczki dplyr:</p>
 <pre><code>moje_dane &lt;- moje_dane %&gt;%
   mutate(przyklad = case_when(
