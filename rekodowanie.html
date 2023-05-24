@@ -23,7 +23,7 @@
 <meta name="author" content="Małgorzata Basińska" />
 
 
-<meta name="date" content="2023-05-22" />
+<meta name="date" content="2023-05-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -226,8 +226,31 @@ div.csl-indent {
     &quot;1&quot; = &quot;Zdecydowanie nie&quot;,
     &quot;2&quot; = &quot;Raczej nie&quot;,
     &quot;3&quot; = &quot;Raczej tak&quot;,
-    &quot;4&quot; = &quot;Raczej nie&quot;))</code></pre>
-<p>Jeżeli chcielibyście obliczać coś na tej zmiennej (np. dodać wyniki w pytaniach), potrzebujecie kolejnego kroku, w którym zmienicie typ zmiennej. Informacje w <a href="lab08-datatypes.html#lab08-datatypes">stosownym podrozdziale</a>.</p>
+    &quot;4&quot; = &quot;Zdecydowanie tak&quot;))</code></pre>
+<p>UWAGA! Kiedy zamieniacie zmienną <code>przyklad</code> na faktor, R ustawia sobie to, w jakiej kolejności występują poziomy i robi to opierając się na kolejności alfabetycznej. Żeby zobaczyć, jaka jest kolejność poziomów, możecie użyć funkcji <code>levels()</code>. Dowiecie się wtedy, że poziomy mają swój porządek, który wygląda tak: Raczej nie, Raczej tak, Zdecydowanie nie, Zdecydowanie tak. Jak zamienicie je na 1, 2, 3, 4, to porządek pozostanie taki sam, czyli: 2, 3, 1, 4 (poziomy będą miały tę samą kolejność, tylko nazwy będą inne). Jeżeli potem zastosujecie funcję <code>as.numeric()</code>, to na liczbę zostanie zamieniona widoczna liczba, tylko ukryty poziom faktora…</p>
+<p>Można pokonać ten problem na dwa sposoby. Pierwszy polega na tym, by ustalić poziomy faktora w zadanej kolejności:</p>
+<pre><code>moje_dane &lt;- moje_dane %&gt;%
+  mutate(przyklad = as.factor(przyklad)) %&gt;%
+  mutate(przyklad = fct_recode(przyklad,
+    &quot;1&quot; = &quot;Zdecydowanie nie&quot;,
+    &quot;2&quot; = &quot;Raczej nie&quot;,
+    &quot;3&quot; = &quot;Raczej tak&quot;,
+    &quot;4&quot; = &quot;Zdecydowanie tak&quot;)) %&gt;%
+  mutate(przyklad = factor(przyklad, levels = c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;)))</code></pre>
+<p>Inny sposób polega na zastosowaniu innej funkcji, jeżeli macie starszą wersję paczki dplyr:</p>
+<pre><code>moje_dane &lt;- moje_dane %&gt;%
+  mutate(przyklad = case_when(
+    przyklad == &quot;Zdecydowanie nie&quot; ~ 1,
+    przyklad == &quot;Raczej nie&quot; ~ 2,
+    przyklad == &quot;Raczej tak&quot; ~ 3,
+    przyklad == &quot;Zdecydowanie tak&quot; ~ 4))</code></pre>
+<p>Jeżeli macie najnowszą lub relatywnie nową wersję paczki dplyr (1.1.2), to możecie skorzystać z jeszcze innej funkcji:</p>
+<pre><code>moje_dane &lt;- moje_dane %&gt;%
+  mutate(przyklad = case_match(przyklad,
+    &quot;Zdecydowanie nie&quot; ~ 1,
+    &quot;Raczej nie&quot; ~ 2,
+    &quot;Raczej tak&quot; ~ 3,
+    &quot;Zdecydowanie tak&quot; ~ 4))</code></pre>
 </div>
             </section>
 
