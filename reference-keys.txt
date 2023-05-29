@@ -60,4 +60,12 @@ lab10-co-ma-byc
 lab10-group-comparison
 lab10-correlation
 związek-między-zmiennymi-jakościowymi
+lab09
+lab09-t-vs-w
+lab09-tekst
+lab09-wykresy
+lab09-wykresy-apa
+lab09-table
+lab09-tabele-apa
+prezentacja-statystyk-w-tekście
 refs

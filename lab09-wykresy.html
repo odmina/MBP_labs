@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Prezentacja danych: liczby, tabele i wykresy | Twój pierwszy projekt badawczy</title>
-  <meta name="description" content="10 Prezentacja danych: liczby, tabele i wykresy | Twój pierwszy projekt badawczy" />
+  <title>10.3 Wykresy | Twój pierwszy projekt badawczy</title>
+  <meta name="description" content="10.3 Wykresy | Twój pierwszy projekt badawczy" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Prezentacja danych: liczby, tabele i wykresy | Twój pierwszy projekt badawczy" />
+  <meta property="og:title" content="10.3 Wykresy | Twój pierwszy projekt badawczy" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Prezentacja danych: liczby, tabele i wykresy | Twój pierwszy projekt badawczy" />
+  <meta name="twitter:title" content="10.3 Wykresy | Twój pierwszy projekt badawczy" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lab10-co-ma-byc.html"/>
-<link rel="next" href="lab09-t-vs-w.html"/>
+<link rel="prev" href="lab09-tekst.html"/>
+<link rel="next" href="lab09-table.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -231,20 +231,37 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab09" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">10</span> Prezentacja danych: liczby, tabele i wykresy<a href="lab09.html#lab09" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>W Waszych artykułach będziecie prezentować wyniki analiz statystycznych. Powinniście zrobić to spójnie, tzn. jeżeli w tekście pojawia się np. informacja o średniej, to za każdym razem powinna być sformatowana tak samo. Podobnie, jeżeli prezentujecie wykresy, każdy z nich powinien mieć te same elementy (numerację, tytuł, adnotacje), sformatowane w ten sam sposób. Ułatwia to przeczytanie i zrozumienie Waszego artykułu - odbiorca może skupić się na treści i nie jest rozpraszany przez ozdobniki oraz zaskakujące (lub brakujące) elementy.</p>
-<p>Tabele pozwalają Wam przedstawić statystyki opisowe i podsumowania modeli statystycznych. Są przydatne szczególnie, gdy podsumowań jest dużo.</p>
-<p>Po co tworzymy wykresy? Sztampowe uzasadnienie to “jeden wykres wart jest tysiąc słów”. A tak poważnie, zanim przystąpicie do statystycznej analizy, <strong>MUSICIE</strong> wiedzieć, jak wyglądają Wasze dane. Zanim zastanowicie się, czy jakaś zależność jest statystycznie istotna, musicie wiedzieć, jaka ona jest. Szybciej zobaczycie to na wykresie, niż spoglądając na “gołe” liczby. Poza tym niektóre podsumowania liczbowe nie mają sensu dla danych o określonych właściwościach. Pamiętacie <a href="https://pl.wikipedia.org/wiki/Kwartet_Anscombe’a">kwartet Anscombe’a</a>?</p>
-<p>Nie wszystkie wykresy, które przygotowujecie analizując dane warto pokazywać w artykule. Np. histogramy, które tworzycie, by ocenić, czy rozkład zmiennej jest normalny, tworzycie przede wszystkim na własny użytek. Wszystkie materiały, które powstają np. by ocenić, czy założenia danej metody analizy są spełnione lub czy wykorzystać parametryczny, czy nieparametryczny test, mogą znaleźć się w suplemencie do artykułu (nie musicie w ramach tej pracy przygotowywać suplementu).</p>
+<div id="lab09-wykresy" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Wykresy<a href="lab09-wykresy.html#lab09-wykresy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="box">
+<p>LITERATURA</p>
+<p>O wykresach polecam rozdział <a href="https://r4ds.had.co.nz/data-visualisation.html">3 Data visualisation z książki R for Data Science</a></p>
+<p>Jeżeli chcielibyście zająć się wizualizacją danych, w książce <a href="https://r-graphics.org">R Graphics Cookbook</a> znajdziecie bardzo szczegółowe informacje o tworzeniu wykresów.</p>
+</div>
+<p>Gdybyście chcieli zmienić to jak wygląda wykres, który powstaje domyślnie w R, poniżej podstawowe informacje lub linki do nich.</p>
+<ul>
+<li>Jeżeli nie lubicie szarego tła R-owych wykresów, możecie na końcu kodu wykresu dodać linijkę <code>theme__classic()</code>. Tutaj więcej informacji o motywach w <code>ggplot2</code>: <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">link</a>.</li>
+<li>Jeżeli chcecie zmienić tytuły osi x i y, to możecie skorzystać z polecenia <code>labs()</code> z odpowiednim paramentrem, np. by zmienić opis osi x i y: <code>labs(x = "Wasz piękny, nowy tytuł", y = "Jeszcze piękniejszy tytuł")</code>. Więcej informacji w <a href="https://ggplot2.tidyverse.org/reference/labs.html">dokumentacji tej funkcji</a>.<br />
+</li>
+<li>W <code>ggplot2</code> można modyfikować praktycznie każdy element wykresu, potrzebne informacje znajdziecie w <a href="https://ggplot2.tidyverse.org/reference/index.html#themes">dokumentacji na stronie ggplot2</a>.</li>
+</ul>
+<div id="lab09-wykresy-apa" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Styl APA<a href="lab09-wykresy.html#lab09-wykresy-apa" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tutaj znajdziecie informacje o tym, jak powinny wyglądać wykresy w stylu APA:</p>
+<ul>
+<li><a href="https://apastyle.apa.org/style-grammar-guidelines/tables-figures/figures">Figure setup</a></li>
+<li><a href="https://apastyle.apa.org/style-grammar-guidelines/tables-figures/sample-figures">Sample figures</a></li>
+<li><a href="https://apa7.liberilibri.pl">Podstawowe informacje po polsku, w części Tabele i rysunki</a></li>
+</ul>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lab10-co-ma-byc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab09-t-vs-w.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lab09-tekst.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab09-table.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
