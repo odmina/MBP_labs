@@ -67,5 +67,6 @@ lab09-wykresy
 lab09-wykresy-apa
 lab09-table
 lab09-tabele-apa
-prezentacja-statystyk-w-tekście
+lab09-stat-tekst
+przykładowe-opisy
 refs
