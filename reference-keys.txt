@@ -69,4 +69,10 @@ lab09-table
 lab09-tabele-apa
 lab09-stat-tekst
 przykładowe-opisy
+lab11
+lab11-struktura
+lab11_format
+lab11-citations
+lab11-tables-charts
+lab11-stats
 refs
