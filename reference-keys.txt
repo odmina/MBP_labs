@@ -1,2 +1,14 @@
 lab01
-refs
+lab01_plan
+lab01_plan_poco
+lab01_plan_jak
+zależności-między-zadaniami---przykład-z-życia
+lab01_temat
+lab01_pytanie
+lab01_pliki
+lab02
+lab02_etyka
+lab02_ryzyko
+lab02_komisja
+lab02_consent
+lab02_sensitive
