@@ -12,4 +12,15 @@ lab02_ryzyko
 lab02_komisja
 lab02_consent
 lab02_sensitive
+lab03
+lab03-miejsca
+lab03-czy-moge
+dlaczego-o-tym-mówimy---podstawowe-kwestie-prawne
+tak-zwane-pola-eksploatacji
+licencje
+wersja-drukowana-a-wersja-internetowa
+praktyczne-zasady-dla-korzystających-z-kwestionariuszy
+lab03-rz-t
+rzetelność
+trafność
 refs
