@@ -23,4 +23,9 @@ praktyczne-zasady-dla-korzystających-z-kwestionariuszy
 lab03-rz-t
 rzetelność
 trafność
+lab04
+słowem-przypomnienia---dobry-temat-badań
+lab04-pytanie
+lab04-hipoteza
+lab04-roznica
 refs
