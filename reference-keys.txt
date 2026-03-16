@@ -1,3 +1,4 @@
+fig:vas
 lab01
 lab01_plan
 lab01_plan_poco
@@ -23,6 +24,9 @@ praktyczne-zasady-dla-korzystających-z-kwestionariuszy
 lab03-rz-t
 rzetelność
 trafność
+lab03_pytania
+lab-03-rodzaje
+szczególne-zagadnienia-dotyczące-pytań-z-kafeterią
 lab04
 słowem-przypomnienia---dobry-temat-badań
 lab04-pytanie
