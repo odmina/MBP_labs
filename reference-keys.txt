@@ -32,4 +32,7 @@ słowem-przypomnienia---dobry-temat-badań
 lab04-pytanie
 lab04-hipoteza
 lab04-roznica
+lab05
+lab05-consent
+lab05-personal-data
 refs
