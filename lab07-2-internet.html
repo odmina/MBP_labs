@@ -23,7 +23,7 @@
 <meta name="author" content="Małgorzata Basińska" />
 
 
-<meta name="date" content="2026-04-23" />
+<meta name="date" content="2026-04-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,8 +235,14 @@ div.csl-indent {
 <div class="box">
 <p><strong>Niektóre funkcje i symbole w Expression Script</strong></p>
 <ul>
-<li><span class="math inline">\(==\)</span> jest równe</li>
-<li><span class="math inline">\(&gt;=, &lt;=\)</span> większe równe, mniejsze równe</li>
+<li><code>==</code> jest równe</li>
+<li><code>&gt;=, &lt;=</code> większe równe, mniejsze równe</li>
+<li><code>!</code> nieprawda, że</li>
+<li><code>is_empty(kod_pytania)</code> pusta odpowiedź</li>
+<li><code>kod_pytania.NAOK</code> NAOK oznacza, że chcemy wykonać operację nawet, jeżeli wartość odpowiedzi jest niedostępna</li>
+<li><code>1</code> w polu Warunek oznacza, że pytanie lub grupa pytań zawsze zostaną zadane</li>
+<li><code>warunek1 &amp;&amp; warunek2</code> &amp;&amp; oznacza, że oba warunki muszą być spełnione</li>
+<li><code>warunek1 || warunek2</code> || oznacza, że przynajmniej jeden z warunków musi być spełniony</li>
 </ul>
 </div>
 </div>
@@ -301,20 +307,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
