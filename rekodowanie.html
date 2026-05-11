@@ -293,6 +293,13 @@ div.csl-indent {
     &quot;Raczej nie&quot; ~ 2,
     &quot;Raczej tak&quot; ~ 3,
     &quot;Zdecydowanie tak&quot; ~ 4))</code></pre>
+<div class="box">
+<p><strong>JAK PODMIENIĆ WYBRANE WARTOŚCI</strong>
+Jeżeli Wasi badani np. źle zrozumieli polecenie i podali skrót zamiast pełnej nazwy albo widzicie jakąś wartość liczbową i jesteście pewni, że niektórzy podali ją w złych jednostkach itp., możecie podczas czyszczenia zamienić wybrane wartości:</p>
+<p><code>dane$nazwa_zmiennej[which(dane$nazwa_zmiennej) == "coś"] &lt;- "nowe lepsze coś"</code></p>
+<p>Powyższa linijka zamieni w zmiennej o nazwie <code>nazwa_zmiennej</code> każdą wartość “coś” na wartość “nowe lepsze coś”.</p>
+<p>Funkcja <code>which()</code> identyfikuje pozycję wystąpień wartości “coś” (możecie sprawdzić na jakimś przykładzie, co zwraca).</p>
+</div>
 </div>
             </section>
 
