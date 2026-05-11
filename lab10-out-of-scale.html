@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.1 Etyka w badaniach naukowych | Twój pierwszy projekt badawczy</title>
-  <meta name="description" content="2.1 Etyka w badaniach naukowych | Twój pierwszy projekt badawczy" />
+  <title>10.6 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy</title>
+  <meta name="description" content="10.6 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.1 Etyka w badaniach naukowych | Twój pierwszy projekt badawczy" />
+  <meta property="og:title" content="10.6 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.1 Etyka w badaniach naukowych | Twój pierwszy projekt badawczy" />
+  <meta name="twitter:title" content="10.6 Wartości spoza skali i braki danych | Twój pierwszy projekt badawczy" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lab02.html"/>
-<link rel="next" href="lab02_ryzyko.html"/>
+<link rel="prev" href="rekodowanie.html"/>
+<link rel="next" href="lab11.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -259,26 +259,36 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab02_etyka" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Etyka w badaniach naukowych<a href="lab02_etyka.html#lab02_etyka" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Źródła dotyczące etyki</strong></p>
-<ul>
-<li>Kodeks etyczny APA <a href="https://www.apa.org/ethics/code">https://www.apa.org/ethics/code</a>, w kontekście badań naukowych w szczególności sekcja 8.</li>
-<li>Standardy etyczne Global Code of Conduct stosowane w projektach NCN <a href="https://www.ncn.gov.pl/aktualnosci/2022-01-17-gcc-w-projektach-ncn">https://www.ncn.gov.pl/aktualnosci/2022-01-17-gcc-w-projektach-ncn</a></li>
-</ul>
-<p>Pierwszymi kodeksami dotyczącymi realizacji badań z udziałem ludzi są:</p>
-<ul>
-<li>Kodeks norymberski (<a href="https://www.ushmm.org/information/exhibitions/online-exhibitions/special-focus/doctors-trial/nuremberg-code">tekst na stronie ushmm.org</a>, <a href="https://pl.wikipedia.org/wiki/Kodeks_norymberski">wikipedia</a>)</li>
-<li>Deklaracja helsińska (<a href="https://nil.org.pl/dzialalnosc/osrodki/osrodek-bioetyki/etyka-w-badaniach-naukowych/1553-deklaracja-helsinska">tekst na stronie nil.org.pl</a>)</li>
-</ul>
+<div id="lab10-out-of-scale" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Wartości spoza skali i braki danych<a href="lab10-out-of-scale.html#lab10-out-of-scale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Może zdarzyć się, że w Waszym zbiorze pojawią się braki danych lub nieoczekiwane wartości. W ankietach papier-ołówek niewiele możecie z tym zrobić, w ankietach internetowych macie narzędzia by ograniczać występowanie takich sytuacji. Niemniej nawet w przypadku dobrze zaprojektowanej ankiety internetowej zachęcam Was (a w przypadku zadania zaliczeniowego wymagam od Was), byście weryfikowali zakres wprowadzonych wartości. Dlaczego? Np. dlatego, że czasami w pytaniu otwartym trudno ograniczyć zakres wprowadzanych wartości do sensownego przedziału i możecie dostać zaskakujący wynik, który warto znać przed przystąpieniem do analizy.</p>
+<div id="braki-danych" class="section level3 hasAnchor" number="10.6.1">
+<h3><span class="header-section-number">10.6.1</span> Braki danych<a href="lab10-out-of-scale.html#braki-danych" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Funkcją służącą do weryfikowania, czy mamy do czynienia z brakiem danych jest funkcja <code>is.na()</code>. Jeżeli chcecie zobaczyć, czy w zmiennej <code>wiek</code> w zbiorze <code>moje_dane</code> macie jakiekolwiek braki, możecie wpisać:</p>
+<pre><code>is.na(moje_dane$wiek)</code></pre>
+<p>Funkcja <code>is.na()</code> zwraca <code>TRUE</code> jeżeli dana wartość jest brakiem danych i <code>FALSE</code> jeżeli nie jest. Robi to dla każdej pojedynczej wartości w wektorze. Jeżeli w zmiennej wiek mieliście wartości: 23, 26, 18, <em>NA</em>, 29, to po zastosowaniu is.na() otrzymacie <code>FALSE</code>, <code>FALSE</code>, <code>FALSE</code>, <code>TRUE</code>, <code>FALSE</code>. Żeby dowiedzieć się, czy macie jakiekolwiek braki, możecie użyć funkcji <code>any.na()</code>. Wtedy dostaniecie <code>TRUE</code>, jeżeli w danej zmiennej był choć jeden brak albo <code>FALSE</code>, jeżeli nie było ani jednego braku.</p>
+<p>Jeżeli chcecie podliczyć, ile było braków możecie skorzystać z fajnej właściwości wartości logicznych. <code>TRUE</code> można traktować jak 1, a <code>FALSE</code> jako 0. Jeżeli wynik zastosowania funkcji <code>is.na()</code> zsumujecie przy użyciu funkcji <code>sum()</code>, otrzymacie liczbę braków.</p>
+<pre><code>sum(is.na(moje_dane$wiek))</code></pre>
 </div>
+<div id="podsumowania" class="section level3 hasAnchor" number="10.6.2">
+<h3><span class="header-section-number">10.6.2</span> Podsumowania<a href="lab10-out-of-scale.html#podsumowania" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Jest wiele sposobów, by przedstawić podsumowania zmiennych, ale zdecydowanie najprostszym jest użycie funkcji <code>summary()</code> (w nawiasie podajecie nazwę zmiennej ze zbiorem). W jej wydruku znajdziecie:</p>
+<ul>
+<li>dla zmiennych tekstowych i faktorów: informacje o częstości występowania każdej z wartości oraz informację o liczbie braków danych;</li>
+<li>dla zmiennych liczbowych: statystyki opisowe, czyli minima, maksima, średnią i kwartyle oraz informację o liczbie braków danych.</li>
+</ul>
+<p>Dla bardziej złożonych danych warto spojrzeć na wykresy! Więcej informacji na ten temat w części poświęconej wykresom.</p>
+
+</div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="lab02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab02_ryzyko.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rekodowanie.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab11.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

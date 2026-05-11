@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.1 Etyka w badaniach naukowych | Twój pierwszy projekt badawczy</title>
-  <meta name="description" content="2.1 Etyka w badaniach naukowych | Twój pierwszy projekt badawczy" />
+  <title>10.2 Import i eksport danych | Twój pierwszy projekt badawczy</title>
+  <meta name="description" content="10.2 Import i eksport danych | Twój pierwszy projekt badawczy" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.1 Etyka w badaniach naukowych | Twój pierwszy projekt badawczy" />
+  <meta property="og:title" content="10.2 Import i eksport danych | Twój pierwszy projekt badawczy" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.1 Etyka w badaniach naukowych | Twój pierwszy projekt badawczy" />
+  <meta name="twitter:title" content="10.2 Import i eksport danych | Twój pierwszy projekt badawczy" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lab02.html"/>
-<link rel="next" href="lab02_ryzyko.html"/>
+<link rel="prev" href="lab10-dataset.html"/>
+<link rel="next" href="lab10-tidyverse.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -259,26 +259,40 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab02_etyka" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Etyka w badaniach naukowych<a href="lab02_etyka.html#lab02_etyka" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Źródła dotyczące etyki</strong></p>
+<div id="lab10-import-export" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Import i eksport danych<a href="lab10-import-export.html#lab10-import-export" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Początkiem Waszej pracy jest import zbioru i zapisanie go jako zmiennej w Waszym środowisku w R. Na tych zajęciach pracujemy z wykorzystaniem plików .csv. Pamiętajcie jednak, że R pozwala Wam na import rozmaitych typów plików, np. plików .xlsx (paczka <a href="https://readxl.tidyverse.org">readxl</a>) lub plików tworzonych w pakietach statystycznych (paczka <a href="https://haven.tidyverse.org">haven</a>).</p>
+<p>Plik .csv jest plikiem tekstowym zawierającym dane w formie tabeli. Możecie go otworzyć w dowolnym edytorze tekstu, np. w Notatniku. Kolejne kolumny tabeli oddzielane są najczęściej przecinkami, średnikami lub tabulatorami (w ostatnim przypadku możecie spotkaać się z rozszerzeniem .tsv). Gdy korzystacie z formularzy Google, możecie ściągnąć plik .csv z wynikami Waszego badania. Gdy wprowadzacie dane z wykorzystaniem arkusza kalkulacyjnego, możecie zapisać wynik Waszej pracy w formie pliku .csv korzystając z opcji Eksport w menu Plik.</p>
+<div id="import" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Import<a href="lab10-import-export.html#import" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>By zaimportować plik o nazwie “dane.csv” możecie skorzystać z następujących funkcji z biblioteki tidyverse:</p>
 <ul>
-<li>Kodeks etyczny APA <a href="https://www.apa.org/ethics/code">https://www.apa.org/ethics/code</a>, w kontekście badań naukowych w szczególności sekcja 8.</li>
-<li>Standardy etyczne Global Code of Conduct stosowane w projektach NCN <a href="https://www.ncn.gov.pl/aktualnosci/2022-01-17-gcc-w-projektach-ncn">https://www.ncn.gov.pl/aktualnosci/2022-01-17-gcc-w-projektach-ncn</a></li>
+<li><code>read_csv("dane.csv")</code> - gdy kolumny rozdzielone są przecinkami;</li>
+<li><code>read_csv2("dane.csv")</code> - gdy kolumny rozdzielone są średnikami;</li>
+<li><code>read_tsv("dane.csv")</code> - gdy kolumny rozdzielone są tabulatorami.</li>
 </ul>
-<p>Pierwszymi kodeksami dotyczącymi realizacji badań z udziałem ludzi są:</p>
+<p>Funkcji do importu jest więcej, informacje znajdziecie w pomocy R oraz <a href="https://readr.tidyverse.org">na stronie tidyverse</a>.</p>
+</div>
+<div id="eksport" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Eksport<a href="lab10-import-export.html#eksport" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Wyobraźcie sobie, że stworzyliście notatnik, w którym przygotowaliście zbiór do analizy. Dla przejrzystości chcecie przeprowadzić analizy w nowym notatniku. W takiej sytuacji warto zapisać Wasz gotowy do analizy, wyczyszczony zbiór w nowym pliku .csv, który będziecie mogli zaimportować. Możecie wykorzystać w tym celu funkcje analogiczne do funkcji importujących, ale zamiast read_* używacie write_*:</p>
 <ul>
-<li>Kodeks norymberski (<a href="https://www.ushmm.org/information/exhibitions/online-exhibitions/special-focus/doctors-trial/nuremberg-code">tekst na stronie ushmm.org</a>, <a href="https://pl.wikipedia.org/wiki/Kodeks_norymberski">wikipedia</a>)</li>
-<li>Deklaracja helsińska (<a href="https://nil.org.pl/dzialalnosc/osrodki/osrodek-bioetyki/etyka-w-badaniach-naukowych/1553-deklaracja-helsinska">tekst na stronie nil.org.pl</a>)</li>
+<li><code>write_csv("dane_do_analizy.csv")</code> - kolumny rozdzielone będą przecinkami;</li>
+<li><code>write_csv2("dane_do_analizy.csv")</code> - kolumny rozdzielone będą średnikami;</li>
+<li><code>write_tsv("dane_do_analizy.csv")</code> - kolumny rozdzielone będą tabulatorami.</li>
 </ul>
+<div class="box">
+<p><em>Może się Wam to wydać oczywiste, ale pamiętajcie, by zmieniony zbiór zapisać pod inną nazwą niż zbiór wyjściowy. Jeżeli wykorzystacie nazwę już istniejącego pliku, R nie poinformuje Was, że plik o takiej nazwie już istnieje, po prostu nadpisze nowy plik na starym i stary plik stracicie. Jeżeli nie będziecie mieli skąd go ściągnąć ponownie, stracicie go bezpowrotnie.</em></p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lab02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab02_ryzyko.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lab10-dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab10-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
